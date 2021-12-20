@@ -11,20 +11,20 @@ import math
 from matplotlib import rcParams
 
 coiBlocks = csv.reader(open(
-    "/Users/connorhaines/PycharmProjects/COIAnalysis/COI_maps/DistrictBuilderCOI.csv"))
+    "FILLIN.csv"))
 
 # 2, the CSV of the state's PL file
-allBlocks = csv.reader(open("/Users/connorhaines/PycharmProjects/COIAnalysis/az_pl2020_b.csv"))
+allBlocks = csv.reader(open("FILLIN.csv"))
 
 # 3, the CSV of the census block assignments of the enacted plan
-planBlocks = csv.reader(open("/Users/connorhaines/PycharmProjects/COIAnalysis/ArizonaPlanBlocks.csv"))
+planBlocks = csv.reader(open("FILLIN.csv"))
 
 # 4, the shapefile or geojson of the enacted plan
 congress_map_shapefile = gp.read_file(
-    "/Users/connorhaines/PycharmProjects/COIAnalysis/district-shapes.geojson")  # Congressional Map Shape/Approved_Congressional_Draft_Map.shp)
+    "FILLIN.geojson")  
 
 # 5, the shapefile of the US census blocks in the state
-blocks_shapefile = gp.read_file("/Users/connorhaines/PycharmProjects/COIAnalysis/az_b_2020_bound/az_b_2020_bound.shp")
+blocks_shapefile = gp.read_file("FILLIN.shp")
 
 # create dictionary linking each block ID to its district. Key=blockID, value = district num
 DistNums = {}
