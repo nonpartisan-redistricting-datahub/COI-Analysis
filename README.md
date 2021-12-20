@@ -1,12 +1,12 @@
 # Directions for COIOverlaps and COIPopAssess
 
 # COIOverlap
-	Note: This program works with Community of Interest maps that were created in DavesRedistricting, Districtr, DistrictBuilder and Representable.  
+Note: This program works with Community of Interest maps that were created in DavesRedistricting, Districtr, DistrictBuilder and Representable.  
 
-	This program allows a user to import n COI maps, such as all those submitted by the public, and returns a map of hot-spots where multiple COI map submissions outlined the same area as a community.  This is done by calculating an overlap score for each census block. Each census block receives a higher score as more COI maps include the block in their community.  As more people identify a geographic area as a Community of Interest, that area’s overlap score increases; that geographic area then appears darker on the map.
-	A user can also import a shapefile of a state’s current districts at any level (U.S. House, state senate…) and the program will outline the borders of the districts in the plan so that the COI hot-spots can be visualized with respect to the final district borders.
+This program allows a user to import n COI maps, such as all those submitted by the public, and returns a map of hot-spots where multiple COI map submissions outlined the same area as a community.  This is done by calculating an overlap score for each census block. Each census block receives a higher score as more COI maps include the block in their community.  As more people identify a geographic area as a Community of Interest, that area’s overlap score increases; that geographic area then appears darker on the map.
+A user can also import a shapefile of a state’s current districts at any level (U.S. House, state senate…) and the program will outline the borders of the districts in the plan so that the COI hot-spots can be visualized with respect to the final district borders.
 
-	For any state, a user must download the following 5 data sets and import them into the program.  Directions on these steps are also written in the program itself.
+For any state, a user must download the following 5 data sets and import them into the program.  Directions on these steps are also written in the program itself.
 
 A note on shapefiles: Downloading a shapefile will download a folder that includes a .cpg, .dbf, .prj and .shx file, in addition to the shapefile.  In order for the program to work, all these files must be kept with the shapefile in a single folder.  Import this entire folder to your working environment.  Only the shapefile needs to be directly referenced in the python program, however – the rest will be read automatically.
 
@@ -32,7 +32,7 @@ Note: This program works with Community of Interest maps that were created in Da
 
 This program allows a user to import their Community of Interest map and returns the percent of the COI’s population in each district of the enacted plan. It also produces a map outlining the districts of the enacted plan with the COI overlaid for a visual representation of how the COI was split. The COI map can be drawn and downloaded from DavesRedistricting, DistrictBuilder or Districtr – all three are integrated into the program (in Daves and DistrictBuilder select the option to draw a Community rather than a full plan).  After drawing your community, export the block assignments for your community as a CSV.  Note: in Districtr, export as a ‘CSV (blocks),’ rather than a ‘CSV (these units).’
 
-	For any state, a user must download the following 5 data sets and import them into the program.  Directions on these steps are also written in the program itself.
+For any state, a user must download the following 5 data sets and import them into the program.  Directions on these steps are also written in the program itself.
 
 1. The CSV of your COI, containing in the first column the GEOID of the blocks in the COI.  Drawing and exporting a COI from DavesRedistricting.org or DistrictBuilder.org will automatically format this file correctly.
 
