@@ -22,7 +22,7 @@ A note on shapefiles: Downloading a shapefile will download a folder that includ
 
 What to do once the files are downloaded:
 
-Open the COIOverlap.py file in your Python IDE.  Through Finder (or Windows Explorer), drag and drop all files you downloaded into the folder that COIOverlap.py is in.  Then, put the file path name of the three aforementioned files into their respective variables in the COIOverlap program.  In COIOverlap the variables are listed in the same order as 1-3 above.  
+Open the COIOverlap.py file in your Python IDE.  Through Finder (or Windows Explorer), drag and drop all files you downloaded into the folder that COIOverlap.py is in.  Then, put the file path name of the five aforementioned files into their respective variables in the COIOverlap program.  In COIOverlap the variables are listed in the same order as 1-5 above.  
 
 Make sure all the COI maps are in one folder, and in COIOverlap.py set ‘all_COI_files’ equal to the path leading to this folder.  For example, if you have all the COI maps saved in a folder entitled ‘AllCOIMaps’, then your COIOverlap.py line will look like this: 
 all_COI_files = os.listdir("put the path leading to AllCOIMaps here/AllCOIMaps")
