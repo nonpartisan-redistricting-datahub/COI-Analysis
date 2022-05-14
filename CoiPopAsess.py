@@ -2,6 +2,8 @@ import csv
 import matplotlib.pyplot as plt
 import geopandas as gp
 import math
+from locality_splitting import metrics
+import numpy as np
 
 ## TODO
 # To implement this COI analysis, you must import 5 files
@@ -100,23 +102,24 @@ plt.text(0.75, -0.95, 'The population of your COI \n is split into ' + str(len(d
          + 'The percent of your COI\'s pop \n in each district is labeled on the pie chart.')
 
 
-# Effective Splits and Uncertainty of Membership
-# Effective Splits = (1/SUM(Ni^2))-1
-# Uncertainty of Membership = -SUM(Nilog2Ni)
-# where Ni is the proportion of a community contained in a district
+# Calculate splitting metrics
+# see https://github.com/jacobwachspress/locality-splitting for details on calculations
 
-sumNi_ES = 0
-sumNI_UoM = 0
-for x in pops:
-    Ni = (int(x) / total_pop)
-    sumNi_ES += Ni ** 2
-    sumNI_UoM += (Ni * math.log2(Ni))
-effective_splits = (1 / sumNi_ES) - 1
-uncertainty_of_membership = -1 * sumNI_UoM
+# choose metrics here
+metrics_to_test = ['districts_intersecting', 'conditional_entropy', 'sqrt_entropy', 'effective_splits', 'split_pairs']
 
-print('Effective Splits = ' + str(effective_splits))
-print('Uncertainty of Membership = ' + str(uncertainty_of_membership))
+# calculate scores
+pops_arr = np.asarray(pops)
+split_metric_functions = {'districts_intersecting' : metrics.locality_intersections, 
+                         'conditional_entropy' : metrics.conditional_entropy,
+                         'sqrt_entropy' : metrics.sqrt_entropy,
+                         'effective_splits' : metrics.effective_splits, 
+                         'split_pairs' : metrics.split_pairs}
+d = {metric : split_metric_functions[metric](pops_arr) for metric in metrics_to_test}
 
+# print results
+print('Splitting metrics:')
+_ = [print(f'{key} = {d[key]}') for key in d]
 
 
 ## Map

@@ -49,3 +49,9 @@ What to do once the files are downloaded:
 Open the COIPopAssess.py file in your Python IDE.  Through Finder (or Windows Explorer), drag and drop all files you downloaded into the folder that COIPopAssess.py is in.  Then, put the file path name of the five aforementioned files into their respective variables in the COIPopAssess program.  In COIPopAssess the variables are listed in the same order as 1-5 above. 
 Final note: downloading a shapefile will download a folder that includes a .cpg, .dbf, .prj and .shx file, in addition to the shapefile.  In order for the program to work, all these files must be kept with the shapefile in a single folder.  Import this entire folder to your working environment.  Only the shapefile needs to be directly referenced in the python program, however – the rest will be read automatically.
 
+Note: this script depends on this locality-splitting [package](https://github.com/jacobwachspress/locality-splitting), which you can install with 
+
+```
+pip install locality-splitting
+```
+
